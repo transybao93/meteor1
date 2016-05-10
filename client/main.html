@@ -1,0 +1,54 @@
+<head>
+  <title>Chat room</title>
+</head>
+
+<body>
+  <h1>Welcome to sample chat room!</h1>
+  {{> register}}
+  {{> hello}}
+</body>
+
+<template name="hello">
+
+  
+    <div style="height:200px; overflow: auto; margin-bottom:20px">
+      {{#each messages}}
+        <p>{{username}} says: {{text}}</p>
+      {{/each}}
+    </div>
+
+  {{#if currentUser}}
+    <form class="chat-form">
+      
+      <textarea name="message"></textarea>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  {{/if}}
+  
+
+
+  <!-- <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p> -->
+</template>
+
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com">Discussions</a></li>
+  </ul>
+</template>
+
+<template name="bao">
+  <p>hehe</p>
+</template>
+
+<template name="register">
+  {{> loginButtons}}
+  
+  <br>
+  <br>
+</template>
